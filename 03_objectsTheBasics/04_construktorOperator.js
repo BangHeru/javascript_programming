@@ -11,7 +11,7 @@ class User {
         this.name = name;
         this.isAdmin = false;
     };
-    
+
     setAge(age) {
         this.age = age;
     };
@@ -38,3 +38,32 @@ console.log(user);
 
 user.removeAge();
 console.log(user);
+
+
+class Calculator {
+    constructor(a, b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    sum() {
+        return this.a + this.b;
+    }
+
+    mul() {
+        return this.a * this.b;
+    }
+
+    read(a, b){
+        this.a = a;
+        this.b = b;
+    }
+}
+
+
+let calculator = new Calculator(2, 4);
+console.log(calculator.sum());
+
+calculator.read(5,2);
+console.log(calculator.sum());
+console.log(calculator.mul());
