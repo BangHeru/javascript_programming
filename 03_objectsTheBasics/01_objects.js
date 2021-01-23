@@ -82,3 +82,91 @@ let codes = {
   }
  
  
+  let books = {
+    isbn: '6020633179',
+    title: 'Atomic Habits: Perubahan Kecil yang memberikan hasil luar biasa',
+    authors: ['James Clear'],
+    numPages: 351 
+  }
+
+  console.log(books);
+
+  for (let key in books) {
+    console.log(key + ' ==> ' + books[key]);
+  }
+
+
+let userTask = {};
+userTask.name = "John";
+userTask.surname = "Smith";
+userTask.name = "Pete";
+delete userTask.name;
+
+
+/*
+Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+
+Should work like that:
+*/
+
+function isEmpty(obj) {
+  for (let key in obj) {
+    // if the loop has started, there is a property
+    return false;
+  }
+  return true;
+}
+
+
+let schedule = {};
+console.log(schedule);
+
+console.log( isEmpty(schedule) ); // true
+
+schedule["8:30"] = "get up";
+
+console.log( isEmpty(schedule) ); // false
+console.log(schedule);
+
+
+/*
+We have an object storing salaries of our team:
+*/
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+};
+
+let sum = 0;
+for (let key in salaries) {
+  sum += salaries[key];
+}
+
+console.log(sum); // 390
+
+
+/*
+Create a function multiplyNumeric(obj) that multiplies all numeric 
+property values of obj by 2.
+*/
+
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == 'number') {
+      obj[key] *= 2;
+    }
+  }
+}
+
+// before the call
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+console.log(menu);
